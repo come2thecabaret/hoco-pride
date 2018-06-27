@@ -1,1 +1,104 @@
-.
+* {
+  box-sizing: border-box;
+  margin: 0;
+  color: #333;
+}
+body {
+  font-family: "roboto";
+  font-size: 16px;
+}
+/*HERO SECTION*/
+.hero {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+.hero__image {
+  height: 100%;
+  padding-right: 20px;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px 60px;
+  justify-content: space-around;
+}
+.hero__title {
+  font-family: "Oswald", Helvetica, Arial, sans-serif;
+  font-size: 9vh;
+  line-height: 12vh;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 30px;
+}
+.hero__title::after {
+  position: absolute;
+  content: '';
+  left:5%;
+  right: 5%;
+  bottom: -25px;
+  border-bottom: 2px solid #333;
+}
+.hero__info {
+  font-family: "Oswald";
+  font-size: 3vh;
+  display: flex;
+  justify-content: space-around;
+}
+.hero__infobox {
+  display: flex;
+  flex-direction: column;
+}
+.hero__infobox i {
+  font-size: 4vh;
+}
+.hero__theme {
+  font-size: 4vh;
+  display: flex;
+  flex-direction: column;
+}
+.hero__theme-row {
+  display: flex;
+  align-self: center;
+}
+.hero__theme-row i {
+  font-size: 3.5vh;
+  align-self: center;
+  /*background: linear-gradient(180deg,
+        red 0%, red 16.7%,
+        orange 16.7%, orange 33.3%,
+        yellow 33.3%, yellow 50%,
+        green 50%, green 66.7%,
+        blue 66.7%, blue 83.3%,
+        purple 83.3%, purple 100%);*/
+}
+.hero__action {
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid #333;
+  text-decoration: none;
+  padding: 15px 40px;
+  align-self: center;
+  transition: background .3s;
+}
+.hero__action:hover {
+
+}
+/*FEATURE SECTION*/
+.feature__header {
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 6vh;
+}
+.feature__cards {
+  display: flex;
+
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 33%;
+}
