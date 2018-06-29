@@ -3,6 +3,9 @@
   margin: 0;
   color: #333;
 }
+html,body {
+  overflow-x: hidden;
+}
 body {
   font-family: "roboto";
   font-size: 16px;
@@ -17,7 +20,9 @@ body {
 .hero__image {
   height: 100%;
   padding-right: 20px;
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateY(10px);
+  z-index: -1;
+
 }
 .hero__content {
   display: flex;
@@ -28,11 +33,11 @@ body {
 }
 .hero__title {
   font-family: "Oswald", Helvetica, Arial, sans-serif;
-  font-size: 9vh;
-  line-height: 12vh;
+  font-size: 5.2vw;
+  line-height: 8vw;
   text-transform: uppercase;
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .hero__title::after {
   position: absolute;
@@ -44,7 +49,7 @@ body {
 }
 .hero__info {
   font-family: "Oswald";
-  font-size: 3vh;
+  font-size: 1.8vw;
   display: flex;
   justify-content: space-around;
 }
@@ -59,14 +64,17 @@ body {
   font-size: 4vh;
   display: flex;
   flex-direction: column;
+  text-transform: lowercase;
 }
 .hero__theme-row {
   display: flex;
   align-self: center;
 }
-.hero__theme-row i {
-  font-size: 3.5vh;
-  align-self: center;
+.hero__theme-row svg {
+  height: 4vh;
+  align-self: end;
+/*  animation: bg-color 5s infinite;
+-webkit-animation: bg-color 5s infinite;*/
   /*background: linear-gradient(180deg,
         red 0%, red 16.7%,
         orange 16.7%, orange 33.3%,
@@ -82,19 +90,43 @@ body {
   text-decoration: none;
   padding: 15px 40px;
   align-self: center;
-  transition: background .3s;
+  transition: background .3s, color .3s;
 }
 .hero__action:hover {
+  background-color: #a02be9;
+  color: #fff;
+      }
 
-}
 /*FEATURE SECTION*/
 .feature__header {
-  padding: 20px;
-  text-align: center;
+  padding: 2vw 3.5vw;
+  font-family: "Oswald";
   text-transform: uppercase;
-  font-size: 6vh;
-  background-color: #3a7e8c;
+  font-size: 5vh;
   color: #fff;
+  font-weight: 300;
+}
+.about .feature__header {
+  background-color: #c2323b;
+}
+.why .feature__header {
+  background-color: #ff945e;
+}
+.partner .feature__header {
+  background-color: #f1cc5d;
+}
+.get-involved .feature__header {
+  background-color: #3a7e8c;
+
+}
+.partner .feature__content {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.partner .feature__content img {
+  max-height: 200px;
+  align-self: center;
 }
 .feature__cards {
   display: flex;
@@ -103,21 +135,63 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  flex: 0 0 33%;
-  padding: 4vh;
+  flex: 1 0 33%;
+  padding: 3.5vw;
   color: #fff;
+  font-size: 18px;
 }
-.card:nth-child(even) {
+.about .card:nth-child(odd) {
+  background-color: #f33f4a;
+}
+.about .card:nth-child(even) {
+  background-color: #f4525c;
+}
+.get-involved .card:nth-child(even) {
   background-color: #418e9e;
 }
-.card:nth-child(odd) {
+.get-involved .card:nth-child(odd) {
   background-color: #58a9ba;
 }
 .card__header {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 26px;
   color: #fff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #fff;
 }
 .card__content {
   color: #fff;
+  line-height: 1.4;
+  padding: 10px 0 20px 0;
+  flex-grow: 1;
+}
+.card__action {
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  align-self: center;
+  transition: background .3s;
+}
+.card__action:hover {
+  background-color: rgba(0,0,0,.2)
+}
+/*ANIMATION*/
+@-webkit-keyframes bg-color {
+  0% { fill: red; }
+  20% { fill: orange; }
+  40% { fill: yellow; }
+  60% { fill: green; }
+  80% { fill: blue; }
+  100% { fill: purple; }
+}
+
+@keyframes bg-color {
+  0% { fill: red; }
+  20% { fill: orange; }
+  40% { fill: yellow; }
+  60% { fill: green; }
+  80% { fill: blue; }
+  100% { fill: purple; }
 }
